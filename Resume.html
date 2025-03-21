@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Digital Resume Builder</h1>
+        
+        <div class="resume-builder">
+            <form id="resume-form">
+                <label>Name:</label>
+                <input type="text" id="name" placeholder="Your Name" required>
+                
+                <label>Email:</label>
+                <input type="email" id="email" placeholder="Your Email" required>
+                
+                <label>Phone:</label>
+                <input type="tel" id="phone" placeholder="Your Phone" required>
+
+                <label>Education:</label>
+                <textarea id="education" placeholder="Your Education"></textarea>
+
+                <label>Experience:</label>
+                <textarea id="experience" placeholder="Your Work Experience"></textarea>
+
+                <label>Skills:</label>
+                <input type="text" id="skills" placeholder="e.g., JavaScript, Python, HTML">
+
+                <button type="button" onclick="generateResume()">Generate Resume</button>
+            </form>
+
+            <div class="resume-preview" id="resume-preview">
+                <h2 id="preview-name">Your Name</h2>
+                <p><strong>Email:</strong> <span id="preview-email"></span></p>
+                <p><strong>Phone:</strong> <span id="preview-phone"></span></p>
+                <p><strong>Education:</strong> <span id="preview-education"></span></p>
+                <p><strong>Experience:</strong> <span id="preview-experience"></span></p>
+                <p><strong>Skills:</strong> <span id="preview-skills"></span></p>
+                <button onclick="downloadPDF()">Download as PDF</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
