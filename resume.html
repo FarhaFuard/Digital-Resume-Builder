@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="resume.css">
+    <link rel="stylesheet" href="Animation.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+        <!-- Quantity should be the same in Sass-->
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+         <div class="container">
+        <!-- Left Side: User Input Form -->
+        <div class="form-container">
+            <h2>Resume Builder</h2>
+
+            <!-- Upload Photo -->
+            <label>Upload Photo</label>
+            <input type="file" id="photoInput" accept="image/*" onchange="previewPhoto()">
+
+            <label>First Name</label>
+            <input type="text" id="firstName" oninput="updateResume()">
+
+            <label>Last Name</label>
+            <input type="text" id="lastName" oninput="updateResume()">
+
+            <label>Job Title</label>
+            <input type="text" id="jobTitle" oninput="updateResume()">
+
+            <label>Phone</label>
+            <input type="text" id="phone" oninput="updateResume()">
+
+            <label>Email</label>
+            <input type="email" id="email" oninput="updateResume()">
+
+            <label>Address</label>
+            <input type="text" id="address" oninput="updateResume()">
+
+            <label>Summary</label>
+            <textarea id="summary" rows="3" oninput="updateResume()"></textarea>
+
+            <label>Skills (Comma Separated)</label>
+            <input type="text" id="skills" oninput="updateResume()">
+
+            <label>Experience (Comma Separated)</label>
+            <textarea id="experience" rows="4" oninput="updateResume()"></textarea>
+
+            <label>Education (Comma Separated)</label>
+            <textarea id="education" rows="3" oninput="updateResume()"></textarea>
+
+            <label>Certificates (If any)(Comma Separated)</label>
+            <textarea id="certificates" rows="2" oninput="updateResume()"></textarea>
+
+            <button onclick="downloadPDF()">Download Resume as PDF</button>
+        </div>
+
+        <!-- Right Side: Resume Preview -->
+        <div class="resume-preview" id="resume-preview">
+            <div class="left-column">
+                <div class="profile-pic" id="profile-pic"></div>
+                <h3>CONTACT</h3>
+                <p id="preview-phone">Phone: </p>
+                <p id="preview-email">Email: </p>
+                <p id="preview-address">Address: </p>
+
+                <h3>EDUCATION</h3>
+                <p id="preview-education">Your education details...</p>
+
+                <h3>SKILLS</h3>
+                <ul id="preview-skills"></ul>
+            </div>
+
+            <div class="right-column">
+                <h1 id="preview-name">Your Name</h1>
+                <p id="preview-jobTitle">Job Title</p>
+                <hr>
+
+                <h3>PROFILE</h3>
+                <p id="preview-summary">Write a brief summary...</p>
+
+                <h3>WORK EXPERIENCE</h3>
+                <p id="preview-experience">Your experience...</p>
+
+                <h3>CERTIFICATES</h3>
+                <p id="preview-certificates">Any certificates...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="resume.js"></script>
+</body>
+</html>
